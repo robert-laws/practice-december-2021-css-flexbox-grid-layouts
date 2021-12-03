@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox One</title>
+    <style>
+      html {
+        box-sizing: border-box;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+        font-size: 1.5rem;
+      }
+
+      ul {
+        padding: 0;
+        margin: 5rem auto;
+        list-style-type: none;
+        border: 1px dotted #ccc;
+        height: 500px;
+        width: 900px;
+
+        display: flex;
+        /* flex-direction: row;
+        flex-wrap: wrap-reverse; */
+        flex-flow: row wrap;
+        justify-content: center;
+        /* align-items: center; */
+        align-content: center;
+      }
+
+      li {
+        border: 2px solid #000;
+        background-color: lightblue;
+        /* height: 100px;
+        min-width: 100px; */
+        flex-grow: 1;
+        flex-basis: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>Item #1</li>
+      <li>Item #2 - some basic information...</li>
+      <li>Item #3</li>
+      <li>Item #4 - other things...</li>
+      <li>Item #5</li>
+      <li>Item #6</li>
+    </ul>
+  </body>
+</html>
