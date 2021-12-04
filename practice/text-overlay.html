@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Overlay</title>
+    <style>
+      figure {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-flow: column nowrap;
+        position: relative;
+        margin: 0.5rem 0;
+      }
+      /* caption styling  */
+      figcaption {
+        background-color: #001219;
+        color: white;
+        opacity: 0.85;
+        padding: 1rem;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+      }
+      /* reduces the top margin on the h2, bottom on the p, and leaves a 0.5rem gap between the two */
+      figcaption * {
+        margin: 0.5rem;
+      }
+      /* hack to make images flexible */
+      img {
+        width: 100%;
+      }
+
+      @media (min-width: 600px) {
+        .row {
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: space-evenly;
+          gap: 1%;
+        }
+        figure {
+          flex-basis: 48%;
+        }
+      }
+
+      /* outside the MQ's since they apply at all dimensions */
+      .reverse {
+        flex-flow: row-reverse wrap;
+      }
+      .order-1 {
+        order: 1;
+      }
+      .order-2 {
+        order: 2;
+      }
+      .order-3 {
+        order: 3;
+      }
+
+      /* default styling, no changes needed here, even with responsive design */
+
+      /* set the layout to border box model */
+      html {
+        box-sizing: border-box;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
+      }
+      /* set font family and background gradient */
+      body {
+        padding: 0;
+        border: 0;
+        font-family: Tahoma, Arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <figure>
+        <img
+          src="https://assets.codepen.io/296057/fem-fb-one.png"
+          alt="Image of bubbles through a microscope."
+        />
+        <figcaption>
+          <h2>Bubbles</h2>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </figcaption>
+      </figure>
+      <figure>
+        <img
+          src="https://assets.codepen.io/296057/fem-fb-two.png"
+          alt="Grid of grey squares with green wells."
+        />
+
+        <figcaption>
+          <h2>Green or Grey</h2>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </figcaption>
+      </figure>
+      <figure>
+        <img
+          src="https://assets.codepen.io/296057/fem-fb-three.png"
+          alt="Wavy lines in summery colors like orange, light purple, and yellow."
+        />
+
+        <figcaption>
+          <h2>Summer Waves</h2>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </figcaption>
+      </figure>
+      <figure>
+        <img
+          src="https://assets.codepen.io/296057/fem-fb-four.png"
+          alt="Fibronacci sequence of spirals."
+        />
+
+        <figcaption>
+          <h2>Spiraling Away</h2>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Images</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      sizes="(max-width: 1400px) 50vw, 100vw"
+      srcset="
+        ../img/trees-200.jpg   200w,
+        ../img/trees-976.jpg   976w,
+        ../img/trees-1400.jpg 1400w
+      "
+      src="trees-1400.jpg"
+      alt="Many Trees"
+    />
+  </body>
+</html>

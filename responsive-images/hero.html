@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hero - Responsive Image</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 100%;
+      }
+
+      .container img {
+        margin: 0 auto;
+        display: block;
+        width: 100%;
+        max-width: 1600px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <picture>
+        <source srcset="../img/banner-2000.jpg" media="(min-width: 1600px)" />
+        <source srcset="../img/banner-1200.jpg" media="(min-width: 1000px)" />
+        <source srcset="../img/banner-720.jpg" media="(min-width: 600px)" />
+        <img src="../img/banner-720.jpg" alt="Abstract Trees Banner" />
+      </picture>
+    </div>
+  </body>
+</html>

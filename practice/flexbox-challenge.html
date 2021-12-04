@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox Challenge</title>
+    <style>
+      :root {
+        --color1: #001219;
+        --color2: #005f73;
+        --color3: #3d9397;
+        --color4: #94d28d;
+        --color5: #e9d8a6;
+        --color6: #ee9800;
+        --color7: #ca6702;
+        --color8: #bb3e03;
+        --color9: #ae2012;
+        --color10: #9b2226;
+      }
+
+      /* generic site styles */
+
+      html {
+        box-sizing: border-box;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
+      }
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #dbe5de;
+        padding: 0;
+        margin: 0;
+      }
+
+      section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      section h2 {
+        font-size: 2.5rem;
+      }
+
+      ul {
+        list-style-type: none;
+      }
+
+      /* Initial mobile layout: a series of images stacked on top of each other with the figure caption over the image. */
+      ul.images {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+      }
+
+      ul.images li {
+        /* flex-basis: 100%; */
+      }
+
+      ul.images img {
+        width: 100%;
+        object-fit: cover;
+        object-position: 0 -150px;
+        margin-bottom: -4px;
+      }
+
+      figure,
+      ul,
+      p {
+        margin: 0;
+        padding: 0;
+      }
+
+      figure {
+        border-width: 10px;
+        border-style: solid;
+        position: relative;
+        margin-bottom: 0.5rem;
+        max-height: 400px;
+        overflow: hidden;
+      }
+
+      figcaption {
+        background-color: #fff;
+        opacity: 0.85;
+        font-size: 2rem;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 0.5rem;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+      }
+
+      figcaption a {
+        color: #000;
+        text-decoration: none;
+      }
+
+      .color2,
+      .color2 a:hover {
+        border-color: var(--color2);
+        color: var(--color2);
+      }
+      .color4,
+      .color4 a:hover {
+        border-color: var(--color4);
+        color: var(--color4);
+      }
+      .color6,
+      .color6 a:hover {
+        border-color: var(--color6);
+        color: var(--color6);
+      }
+      .color7,
+      .color7 a:hover {
+        border-color: var(--color7);
+        color: var(--color7);
+      }
+      .color8,
+      .color8 a:hover {
+        border-color: var(--color8);
+        color: var(--color8);
+      }
+      .color9,
+      .color9 a:hover {
+        border-color: var(--color9);
+        color: var(--color9);
+      }
+
+      section.mission {
+        display: inherit;
+        flex-flow: column wrap;
+        gap: 2%;
+      }
+
+      section.mission h2 {
+      }
+
+      section.mission img {
+        max-height: 100px;
+        display: block;
+      }
+
+      section.mission p {
+        font-size: 1.2rem;
+        line-height: 1.5;
+      }
+
+      /* At this breakpoint, transition to 2 figures per line */
+
+      @media (min-width: 600px) {
+        ul.images {
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: space-between;
+        }
+
+        ul.images li {
+          flex-basis: 49.5%;
+        }
+
+        ul.images img {
+          object-position: 0;
+        }
+      }
+
+      /* At this breakpoint, transition to 3 figures per line */
+
+      @media (min-width: 900px) {
+        ul.images li {
+          flex-basis: 32.75%;
+        }
+
+        section.mission {
+          display: flex;
+          flex-flow: row wrap;
+          gap: 2%;
+        }
+
+        section.mission h2 {
+          flex-basis: 100%;
+        }
+
+        section.mission img {
+          flex-basis: 32%;
+          max-height: 100%;
+          display: block;
+        }
+
+        section.mission p {
+          flex-basis: 66%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="mission">
+      <h2>Our Mission</h2>
+      <img src="../img/logo.png" alt="Logo Image" />
+      <p>
+        We strive to bring people interesting and unique art that inspires them
+        to be more creative and enjoy their homes. We know art can be expensive,
+        so we work with a rotating set of artists and photographers to being you
+        fantastic prints - all for free. We just ask that you donate what you
+        think is fair, or share the site with someone who might like great art
+        as much as you do.
+      </p>
+    </section>
+    <section id="collections">
+      <h2>Collections</h2>
+      <ul class="images">
+        <li>
+          <figure class="color7">
+            <img
+              src="../img/pop-art.jpg"
+              alt="Pop Art: This must be the place"
+            />
+            <figcaption><a href="#">Pop Art</a></figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="color2">
+            <img
+              src="../img/abstract.jpg"
+              alt="Abstract: grey and green squares."
+            />
+            <figcaption><a href="#">Abstract</a></figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="color4">
+            <img
+              src="../img/vivid.jpg"
+              alt="Tree on island in lake with purple sunrise."
+            />
+            <figcaption><a href="#">Vivid</a></figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="color6">
+            <img
+              src="../img/music.jpg"
+              alt="Music: guitar leaning against wall."
+            />
+            <figcaption><a href="#">Music</a></figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="color8">
+            <img
+              src="../img/vehicles.jpg"
+              alt="Vehicles: 1930's car on street."
+            />
+            <figcaption><a href="#">Vehicles</a></figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="color9">
+            <img
+              src="../img/landscape.jpg"
+              alt="Landscape: moonrise over tree-covered mountains."
+            />
+            <figcaption><a href="#">Landscape</a></figcaption>
+          </figure>
+        </li>
+      </ul>
+    </section>
+  </body>
+</html>
